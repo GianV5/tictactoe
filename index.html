@@ -187,6 +187,12 @@
       } else {
         scores.D++; render(); toastMsg('Draw 🤝');
       }
+      // Automatically reset the board after 2 seconds
+      setTimeout(() => {
+        clearBoard();
+        setTurn(first);
+        maybeCpuMove();
+      }, 2000);
     }
 
     // --- CPU (unbeatable) ---
